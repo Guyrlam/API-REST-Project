@@ -1,65 +1,63 @@
-const {userState, writeDb} = require('../repository/repository')
-const Verification = require('../verificators/verificators') 
+const { userState, writeDb } = require("../repository/repository");
+const Verification = require("../verificators/verificators");
 
-async function list(){
-    const array = await userState.usersTemp
-    let actives = []
-    array.forEach((el)=>{
-        if(el.active === true){
-            actives.push(el)
+async function list() {
+    const array = await userState.usersTemp;
+    let actives = [];
+    array.forEach((el) => {
+        if (el.active === true) {
+            actives.push(el);
         }
-    })
-    return actives
+    });
+    return actives;
 }
 
-async function user(id){
-    const array = await userState.usersTemp
+async function user(id) {
+    const array = await userState.usersTemp;
     let selected = undefined;
-    array.forEach((el)=>{
-        if(el.id === Number(id) && el.active === true){
+    array.forEach((el) => {
+        if (el.id === Number(id) && el.active === true) {
             selected = el;
-        };
-    })
+        }
+    });
 
-    return selected
+    return selected;
 }
 
-async function add(data){
-    const array = await userState.usersTemp
+async function add(data) {
+    const array = await userState.usersTemp;
     const newUser = {
-        "name": data.name,
-        "email": data.email,
-        "active": true,
-        "id": array.length +1
-    }
-    array.push(newUser)
-    writeDb(array)
-    return "Usuário adicionado com sucesso!"
+        name: data.name,
+        email: data.email,
+        active: true,
+        id: array.length + 1,
+    };
+    array.push(newUser);
+    writeDb(array);
+    return "Usuário adicionado com sucesso!";
 }
 
-async function change(data, id){
-    const array = await userState.usersTemp
-    array.forEach((el)=>{
-        if(el.id === Number(id)){
-            if(data.name) el.name = data.name
-            if(data.email) el.email = data.email
+async function change(data, id) {
+    const array = await userState.usersTemp;
+    array.forEach((el) => {
+        if (el.id === Number(id)) {
+            if (data.name) el.name = data.name;
+            if (data.email) el.email = data.email;
         }
-    })
-    writeDb(array)
-    return "Usuário alterado com sucesso!"
+    });
+    writeDb(array);
+    return "Usuário alterado com sucesso!";
 }
 
-async function del(id){
-    const array = await userState.usersTemp
-    array.forEach((el)=>{
-        if(el.id === Number(id)){
-            el.active = false
+async function del(id) {
+    const array = await userState.usersTemp;
+    array.forEach((el) => {
+        if (el.id === Number(id)) {
+            el.active = false;
         }
-    })
-    writeDb(array)
-    return "Usuário deletado com sucesso!"
+    });
+    writeDb(array);
+    return "Usuário deletado com sucesso!";
 }
 
-
-
-module.exports = {list, user, add, change, del, Verification}
+module.exports = { list, user, add, change, del, Verification };
