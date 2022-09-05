@@ -1,0 +1,30 @@
+### Variables 
+@apiurl = http://localhost:8080/user
+
+### GET user list
+GET {{apiurl}}/list HTTP/1.1
+
+### GET user
+GET {{apiurl}}/1 HTTP/1.1
+
+### POST user
+POST {{apiurl}} HTTP/1.1
+Content-Type: application/json
+
+{
+   "name":"Usuário teste",
+   "email":"teste@teste.com"
+}
+
+### PUT user
+PUT {{apiurl}}/2 HTTP/1.1
+Content-Type: application/json
+
+{
+   "name":"Usuário teste3",
+   "email":"teste@teste.com"
+}
+
+
+### DELETE user
+DELETE {{apiurl}}/2 HTTP/1.1

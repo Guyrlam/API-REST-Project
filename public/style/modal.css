@@ -1,0 +1,65 @@
+#edit{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.297);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#edit-content{
+    width: 40vw;
+    height: 50vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+}
+
+#inputs input{
+    border: 1px solid rgb(21, 188, 57);
+    border-radius: 5px;
+    width: 35vw;
+    height: 7vh;
+    font-size: 1.3vw;
+    padding-left: 1.5vw;
+    font-weight: 500;
+}
+
+#buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+
+#buttons button{
+    border-radius: 5px;
+    width: 15vw;
+    height: 7vh;
+    font-size: 1.3vw;
+    font-weight: 500;
+    color: white;
+    transition: 0.5s all;
+}
+
+#submit2{
+    border: 1px solid rgb(21, 188, 57);
+    background-color: rgb(21, 188, 57);
+}
+
+#cancel{
+    border: 1px solid #ff0000;
+    background-color: #ff0000;
+}

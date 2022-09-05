@@ -1,0 +1,25 @@
+#alert-bar{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: fit-content;
+    height: fit-content;
+}
+
+#alert-bar p{
+    margin: 1vw;
+    color: white;
+    width: 18vw;
+    height: fit-content;
+    padding: 1vw;
+    font-size: 0.8vw;
+    border-radius: 10px;
+}
+
+.sucess{
+    background-color: rgb(21, 188, 57);
+}
+
+.failure{
+    background-color: #ff0000;
+}
